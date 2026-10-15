@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#07111b" />
+  <title>Agbero Run — 3D Runner</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main id="game">
+    <div id="scene" aria-label="Agbero Run 3D game scene"></div>
+
+    <header class="hud">
+      <div class="brand"><span class="brand-mark">A</span><span>AGBERO <b>RUN</b></span></div>
+      <div class="stats">
+        <div class="stat"><small>DISTANCE</small><strong><span id="distance">0</span><i>m</i></strong></div>
+        <div class="stat coin-stat"><small>COINS</small><strong>◆ <span id="coins">0</span></strong></div>
+        <div class="stat"><small>SPEED</small><strong><span id="speed">1.0</span><i>x</i></strong></div>
+      </div>
+      <button id="pauseBtn" class="small-btn" aria-label="Pause game">Ⅱ</button>
+    </header>
+
+    <div id="toast" class="toast">+1 COIN</div>
+
+    <section id="startScreen" class="screen">
+      <div class="panel start-panel">
+        <div class="eyebrow"><span class="pulse-dot"></span> LAGOS STREETS • ENDLESS RUNNER</div>
+        <h1>AGBERO<br><em>RUN</em></h1>
+        <p class="intro">This Eko traffic ehnnn, everywhere car bus car... make I collect money sha....</p>
+        <div class="mini-features"><span>↔ CHANGE LANES</span><span>↑ JUMP</span><span>↓ DUCK</span></div>
+        <button id="startBtn" class="primary-btn">START RUN <span>↗</span></button>
+        <p class="help desktop-help">Arrow keys / WASD · Space to jump · ↓ to duck</p>
+        <p class="help mobile-help">Swipe to move, jump or duck — or use the touch buttons after starting.</p>
+      </div>
+    </section>
+
+    <section id="pauseScreen" class="screen hidden">
+      <div class="panel compact-panel"><div class="eyebrow">TAKE A BREATHER</div><h2>PAUSED</h2><p class="intro">The road will wait.</p><button id="resumeBtn" class="primary-btn">RESUME RUN <span>▶</span></button><button id="restartPauseBtn" class="secondary-btn">RESTART RUN</button></div>
+    </section>
+
+    <section id="overScreen" class="screen hidden">
+      <div class="panel compact-panel"><div class="eyebrow danger-eyebrow">RUN ENDED</div><h2>YOU CRASHED.</h2><p class="intro">Every run makes you sharper. Try again.</p><div class="result-row"><div><small>DISTANCE</small><strong id="finalDistance">0 m</strong></div><div><small>COINS</small><strong id="finalCoins">0</strong></div></div><button id="retryBtn" class="primary-btn">RUN IT BACK <span>↻</span></button></div>
+    </section>
+
+    <footer class="bottom-hint"><span class="keycap">←</span><span class="keycap">→</span> MOVE <span class="hint-divider">·</span><span class="keycap">SPACE</span> JUMP <span class="hint-divider">·</span><span class="keycap">↓</span> DUCK</footer>
+
+    <div class="mobile-controls" aria-label="Touch controls" role="group">
+      <button data-action="left" aria-label="Move left">←</button><button data-action="jump" aria-label="Jump">↑</button><button data-action="duck" aria-label="Duck">↓</button><button data-action="right" aria-label="Move right">→</button>
+    </div>
+  </main>
+</body>
+</html>
